@@ -5,6 +5,12 @@
  * Assign the keys the appropriate values.
  */
 
+ var me = {
+   firstname:"Chandler",
+   age:27,
+   state:"Utah"
+ };
+
 // CODE HERE
 
 /**
@@ -13,6 +19,8 @@
  * Add a new key/value pair to the 'me' object using dot notation.
  * The new key should be 'faveColor'. Set it to your favorite color as a string.
  */
+
+me.faveColor = "Green";
 
 // CODE HERE
 
@@ -29,6 +37,9 @@ var message = {
   userName: me.firstname
 };
 // DON'T TOUCH THE CODE ABOVE
+
+message["text"] = "Hello world."
+
 // CODE HERE
 
 /**
@@ -39,6 +50,17 @@ var message = {
  * downVote() should take in a number, subtract one from it, and return the number.
  */
 
+var adjustCount = {
+  upVote:function(num1){
+    num1+=1;
+    return num1
+  },
+  downVote:function(num2){
+    num2-=1;
+    return num2
+  }
+};
+
 // CODE HERE
 
 /**
@@ -47,6 +69,8 @@ var message = {
  * Create an array called 'myFriends' with four of your friends names.
  */
 
+var myFriends = ["Sam", "Karson", "Josh", "Ian"];
+
 // CODE HERE
 
 /**
@@ -54,6 +78,8 @@ var message = {
  *
  * Add a fifth friends name to the end of your 'myFriends' array.
  */
+
+myFriends.push("Nick");
 
 // CODE HERE
 
@@ -67,6 +93,11 @@ var message = {
 // DON'T TOUCH THE CODE BELOW
 var myArray = [1, 2, 3, 4];
 // DON'T TOUCH THE CODE ABOVE
+
+var myArrayCopy = myArray.map(function(element){
+  return element;
+});
+
 // CODE HERE
 
 /**
@@ -79,9 +110,16 @@ var myArray = [1, 2, 3, 4];
 //DON'T TOUCH THE CODE BELOW
 var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
-function evensOnly() {
+
+function evensOnly(){
+  var newArray = myNumbers.filter(function(val,i,arr){
+    return val%2===0;
+  })
+  return newArray;
+};
+
   // CODE HERE
-}
+
 
 /**
  * #9
@@ -91,6 +129,7 @@ function evensOnly() {
  */
 
 // CODE HERE
+
 var peopleIknow = [
   { name: "Steve", friend: true },
   { name: "Dan", friend: false },
@@ -99,6 +138,10 @@ var peopleIknow = [
   { name: "Michelle", friend: false },
   { name: "Holly", friend: true }
 ];
+
+var trueFriends = peopleIknow.filter(function(val,i,arr){
+  return val.friend==true;
+})
 
 /**
  * #10
@@ -110,3 +153,13 @@ var peopleIknow = [
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+
+function indexFinder(arr){
+  var newArr = [];
+  for(i=0;i<arr.length;i++){
+    newArr.push(i);
+  };
+  return newArr;
+};
+
+var indexes = indexFinder(randomNumbers);
